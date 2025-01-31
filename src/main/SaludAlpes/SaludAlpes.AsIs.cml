@@ -49,8 +49,6 @@ BoundedContext MonolithicSystem {
 
         Aggregate AIProduct {
             Entity STAStandard
-            Entity STAPro
-            Entity STAEnterprise
         }
     }
 
