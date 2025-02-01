@@ -107,6 +107,19 @@ BoundedContext DataPartnershipContext implements DataPartnership {
   }
 }
 
+/* Contexto delimitado para aprovisionamiento ambiente multitenand clientes. */
+BoundedContext AIProductsContext implements AIProducts {
+  domainVisionStatement = "Proveer infraestructura  a desarrolladores de IA con datos anonimizados y enriquecidos."
+
+    Module products {
+    basePackage = saludtech.domain.products
+    Aggregate AIProduct {
+      Entity STAStandard
+      Entity STAPro
+      Entity STAEnterprise
+    }
+  }
+}
 /* Contexto delimitado para productos para desarrolladores de IA. */
 BoundedContext AIProductsContext implements AIProducts {
   domainVisionStatement = "Proveer soluciones a desarrolladores de IA con datos anonimizados y enriquecidos."
