@@ -42,6 +42,11 @@ Domain SaludTechDeLosAlpes {
     domainVisionStatement = "Estrategias para cumplir normativas locales y expandir operaciones en mercados globales."
   }
 
+  Subdomain Infrastructure {
+    type = SUPPORTING_DOMAIN
+    domainVisionStatement = "Estrategias para cumplir normativas locales y expandir operaciones en mercados globales."
+  }
+
 }
 
 /* Contexto delimitado para el procesamiento de imágenes médicas. */
@@ -107,19 +112,6 @@ BoundedContext DataPartnershipContext implements DataPartnership {
   }
 }
 
-/* Contexto delimitado para aprovisionamiento ambiente multitenand clientes. */
-BoundedContext AIProductsContext implements AIProducts {
-  domainVisionStatement = "Proveer infraestructura  a desarrolladores de IA con datos anonimizados y enriquecidos."
-
-    Module products {
-    basePackage = saludtech.domain.products
-    Aggregate AIProduct {
-      Entity STAStandard
-      Entity STAPro
-      Entity STAEnterprise
-    }
-  }
-}
 /* Contexto delimitado para productos para desarrolladores de IA. */
 BoundedContext AIProductsContext implements AIProducts {
   domainVisionStatement = "Proveer soluciones a desarrolladores de IA con datos anonimizados y enriquecidos."
@@ -148,7 +140,34 @@ BoundedContext GlobalExpansionContext implements GlobalExpansion {
   }
 }
 
-ContextMap SaludTechASIS {
+BoundedContext InfrastructureContext implements Infrastructure {
+  domainVisionStatement = "Gestión de despliegue, monitoreo, CI/CD, almacenamiento y seguridad"
+
+Module infrastructure {
+    basePackage = saludtech.domain.infrastructure
+    Aggregate Deployment {
+      Entity Server
+      ValueObject Id
+      ValueObject Status
+      ValueObject Infrastructure_Region
+    }
+    Aggregate Security {
+      Entity AccessControl
+      ValueObject UserId
+      ValueObject Role
+      ValueObject Permissions
+    }
+    Aggregate Monitoring {
+      Entity Log
+      ValueObject LogId
+      ValueObject Time
+      ValueObject Message
+      ValueObject Severity
+    }
+  }
+}
+
+ContextMap SaludTechTOBE {
   state = TO_BE
   contains ImageProcessingContext
   contains DataAnonymizationContext
@@ -156,30 +175,23 @@ ContextMap SaludTechASIS {
   contains DataPartnershipContext
   contains AIProductsContext
   contains GlobalExpansionContext
+  contains InfrastructureContext
 
-  /*
-   * Núcleo Compartido: ImageProcessingContext y DataAnonymizationContext comparten lógica común.
-   */
+  /* Núcleo Compartido: ImageProcessingContext y DataAnonymizationContext comparten lógica común. */
   ImageProcessingContext [SK]<->[SK] DataAnonymizationContext
 
-  /*
-   * Upstream-Downstream: MetadataTaggingContext depende de los datos procesados por ImageProcessingContext.
-   */
+  /* Upstream-Downstream: MetadataTaggingContext depende de los datos procesados por ImageProcessingContext. */
   ImageProcessingContext [U, OHS, PL]->[D] MetadataTaggingContext
 
-  /*
-   * Upstream-Downstream: AIProductsContext consume datos de MetadataTaggingContext.
-   */
+  /* Upstream-Downstream: AIProductsContext consume datos de MetadataTaggingContext. */
   MetadataTaggingContext [U, OHS, PL]->[D] AIProductsContext
 
-  /*
-   * Proveedor-Cliente: DataPartnershipContext suministra datos a ImageProcessingContext.
-   */
+  /* Proveedor-Cliente: DataPartnershipContext suministra datos a ImageProcessingContext. */
   DataPartnershipContext [D]<-[U, OHS] ImageProcessingContext
 
-  /*
-   * Upstream-Downstream: GlobalExpansionContext respalda a AIProductsContext garantizando el cumplimiento normativo.
-   */
+  /* Upstream-Downstream: GlobalExpansionContext respalda a AIProductsContext garantizando el cumplimiento normativo. */
   GlobalExpansionContext [D]<-[U, OHS, PL] AIProductsContext
-}
 
+  /* Soporte: InfrastructureContext actúa como proveedor de servicios exclusivamente para AIProductsContext. */
+  AIProductsContext [D] <-[U, OHS] InfrastructureContext
+}
