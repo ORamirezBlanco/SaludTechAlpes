@@ -10,41 +10,91 @@ Domain SaludTechDeLosAlpes {
   Subdomain ImageProcessing {
     type = CORE_DOMAIN
     domainVisionStatement = "Procesamiento de imagenes medicas de alta calidad para su uso en modelos de inteligencia artificial."
+
+	/* Historia de Usuario:
+     * Como investigador en IA,
+     * quiero que las imágenes médicas estén preprocesadas y optimizadas,
+     * para garantizar la calidad y consistencia en el entrenamiento de modelos.
+     */
+
+
   }
 
   /* Subdominio para la anonimización de datos. */
   Subdomain DataAnonymization {
     type = CORE_DOMAIN
     domainVisionStatement = "Anonimizacion y limpieza de datos medicos garantizando cumplimiento normativo."
+
+	/* Historia de Usuario:
+     * Como administrador de datos,
+     * quiero que toda la información sensible sea anonimizada automáticamente,
+     * para cumplir con regulaciones como HIPAA y proteger la privacidad del paciente.
+     */
+
   }
 
   /* Subdominio para la generación de etiquetas y metadatos. */
   Subdomain MetadataTagging {
     type = CORE_DOMAIN
     domainVisionStatement = "Generacion de etiquetas y enriquecimiento de datos medicos anonimizados."
+
+	/* Historia de Usuario:
+     * Como científico de datos,
+     * quiero acceder a conjuntos de datos enriquecidos con etiquetas y metadatos relevantes,
+     * para mejorar la precisión y relevancia de los modelos entrenados.
+     */
+
   }
 
   /* Subdominio para gestionar las relaciones con los socios de datos. */
   Subdomain DataPartnership {
     type = CORE_DOMAIN
     domainVisionStatement = "Gestion de relaciones con socios de datos para garantizar el suministro sostenible de imagenes medicas."
+
+	/* Historia de Usuario:
+     * Como gerente de asociaciones,
+     * quiero gestionar acuerdos con socios de datos de manera eficiente,
+     * para garantizar un flujo constante y confiable de imágenes médicas.
+     */
+
   }
 
   /* Subdominio para productos para desarrolladores de IA. */
   Subdomain AIProducts {
     type = CORE_DOMAIN
     domainVisionStatement = "Productos y servicios para desarrolladores de inteligencia artificial basados en datos anonimizados y etiquetados."
+
+	/* Historia de Usuario:
+     * Como desarrollador de IA,
+     * quiero acceder fácilmente a datasets anonimizados y etiquetados,
+     * para entrenar modelos de IA sin preocuparme por la privacidad y el cumplimiento normativo.
+     */
+
   }
 
   /* Subdominio para expansión global y cumplimiento normativo. */
   Subdomain GlobalExpansion {
     type = CORE_DOMAIN
     domainVisionStatement = "Estrategias para cumplir normativas locales y expandir operaciones en mercados globales."
+
+	/* Historia de Usuario:
+     * Como director de expansión,
+     * quiero que el sistema cumpla con las normativas locales de cada país,
+     * para asegurar la continuidad del negocio en mercados globales.
+     */
+
   }
 
   Subdomain Infrastructure {
     type = SUPPORTING_DOMAIN
     domainVisionStatement = "Estrategias para cumplir normativas locales y expandir operaciones en mercados globales."
+
+	/* Historia de Usuario:
+     * Como ingeniero de operaciones,
+     * quiero que los pipelines de CI/CD sean rápidos y confiables,
+     * para garantizar despliegues frecuentes y sin interrupciones.
+     */
+
   }
 
 }
