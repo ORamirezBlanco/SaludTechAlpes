@@ -28,18 +28,18 @@ Diagramas de contexto del proyecto Salud Tech Alpes.
 
 ## Codigo de los modelos
 
-src / main / SaludAlpes
-SaludAlpes.AsIs.cml
-SaludAlpes.ToBe.cml
+src / main / SaludAlpes<br/>
+SaludAlpes.AsIs.cml<br/>
+SaludAlpes.ToBe.cml<br/>
 
 ### Archivos generados:
 
-SaludAlpes.AsIs.cml: Modelo As-Is del sistema
+SaludAlpes.AsIs.cml: Modelo As-Is del sistema<br/>
 SaludAlpes.ToBe.cml: Modelo To-Be del sistema
 
 ### Imagenes generadas por la herramienta:
 
-imagenes_entrega_1/As-Is.png
+imagenes_entrega_1/As-Is.png<br/>
 imagenes_entrega_1/To-Be.png
 
 As-is<br/>
