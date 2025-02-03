@@ -42,12 +42,13 @@ SaludAlpes.ToBe.cml: Modelo To-Be del sistema
 imagenes_entrega_1/As-Is.png
 imagenes_entrega_1/To-Be.png
 
-As-is
+As-is<br/>
 ![imagen](https://github.com/user-attachments/assets/b40f0e0e-35e3-40c7-9f6f-399f1867fb64)
+<br/>
 
-To-Be
+To-Be<br/>
 ![imagen](https://github.com/user-attachments/assets/1c6270cf-9a67-4537-b2e3-51fdbe14aa17)
-
+<br/>
 ## Lenguaje Ubicuo
 
 ### Definiciones
