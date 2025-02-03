@@ -21,20 +21,24 @@ Diagramas de contexto del proyecto Salud Tech Alpes.
         └───SaludAlpes
 </pre>
 
-Archivo de configuración gitpod
+## Archivo de configuración gitpod
+
 /
 .gitpod.yml
 
-Codigo de los modelos
+## Codigo de los modelos
+
 src / main / SaludAlpes
 SaludAlpes.AsIs.cml
 SaludAlpes.ToBe.cml
 
-Se generaron dos archivos:
+### Archivos generados:
+
 SaludAlpes.AsIs.cml: Modelo As-Is del sistema
 SaludAlpes.ToBe.cml: Modelo To-Be del sistema
 
-Imagenes generadas por la herramienta:
+### Imagenes generadas por la herramienta:
+
 imagenes_entrega_1/As-Is.png
 imagenes_entrega_1/To-Be.png
 
@@ -43,6 +47,20 @@ As-is
 
 To-Be
 ![imagen](https://github.com/user-attachments/assets/1c6270cf-9a67-4537-b2e3-51fdbe14aa17)
+
+## Lenguaje Ubicuo
+
+### Definiciones
+
+imagenes_entrega_1/Lenguaje-Ubicuo.png
+
+### Flujo As-Is
+
+imagenes_entrega_1/As-Is-flujo.png
+
+### Flujo To-Be
+
+imagenes_entrega_1/To-Be-flujo.png
 
 Grupo: Discdesiners
 
